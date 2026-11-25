@@ -1,0 +1,40 @@
+[
+  {
+    "_id": {
+      "$oid": "6b0311c4c7ff09ccee49c088"
+    },
+    "recipient": {
+      "$oid": "6b031064a11317ec76dc45d6"
+    },
+    "sender": {
+      "$oid": "6b030ca6c7ff09ccee49c081"
+    },
+    "type": "follow",
+    "createdAt": {
+      "$date": "2026-11-22T16:01:08.700Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-22T16:01:08.700Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b03161e0ecd488212d64180"
+    },
+    "recipient": {
+      "$oid": "6b031063a11317ec76dc45d5"
+    },
+    "sender": {
+      "$oid": "6b030ca6c7ff09ccee49c081"
+    },
+    "type": "follow",
+    "createdAt": {
+      "$date": "2026-11-22T16:19:42.879Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-22T16:19:42.879Z"
+    },
+    "__v": 0
+  }
+]

@@ -1,0 +1,128 @@
+ICHgram: деплой на AWS и доступ из любого места
+==============================================
+
+Схема
+-----
+Браузер (любая сеть) -> https://ваш-домен -> Nginx (80/443)
+                     -> Node.js/Express (PORT, например 5000) -> MongoDB Atlas
+
+Фото хранятся в MongoDB в Base64, поэтому отдельный S3 для загрузок не нужен.
+Локальный mongodb://localhost:27017 с AWS недоступен, поэтому база выносится в облако.
+
+
+Шаг 1. MongoDB Atlas
+--------------------
+1. Создать бесплатный кластер (M0) в Atlas.
+2. В Database Access создать пользователя и пароль.
+3. В Network Access разрешить IP EC2 (на время теста можно 0.0.0.0/0).
+4. Скопировать строку подключения mongodb+srv://... для переменной MONGODB_URI.
+
+Пароль, который использовался для локальной базы в чате, лучше сменить и не использовать в продакшене.
+
+
+Шаг 2. EC2
+----------
+1. Создать инстанс EC2: Ubuntu 22.04/24.04, t3.micro (или t2.micro во free tier).
+2. Создать key pair (.pem) и сохранить его.
+3. В Security Group открыть:
+   - 22 (SSH) только для своего IP;
+   - 80 (HTTP) и 443 (HTTPS) для всех.
+4. Подключить Elastic IP для постоянного адреса.
+5. Направить A-запись домена на этот IP.
+
+
+Шаг 3. Установка на сервере
+---------------------------
+Подключиться по SSH:
+    ssh -i ваш-ключ.pem ubuntu@ВАШ_IP
+
+Установить Node.js 20+, Nginx и git, затем склонировать репозиторий:
+    sudo apt update && sudo apt install -y nginx git
+    git clone ВАШ_РЕПОЗИТОРИЙ ICHgram
+    cd ICHgram
+    npm install
+    npm run build
+
+Использовать npm install, а не pnpm: pnpm блокирует сборку bcrypt.
+
+Создать файл окружения server/.env (не коммитить в git):
+    PORT=5000
+    MONGODB_URI=mongodb+srv://пользователь:пароль@cluster.xxxx.mongodb.net/ichgram
+    JWT_SECRET=длинная_случайная_строка
+    APP_URL=https://ваш-домен
+    # SMTP-переменные для сброса пароля
+
+Проверить, что клиент обращается к API относительными путями (/api/...) или через
+переменную окружения, а не через жестко заданный localhost.
+
+
+Шаг 4. Запуск через PM2
+-----------------------
+PM2 держит процесс в фоне и перезапускает его после сбоя или перезагрузки сервера.
+
+    sudo npm install -g pm2
+    pm2 start npm --name ichgram -- start
+    pm2 save
+    pm2 startup
+
+Команду pm2 startup нужно выполнить с sudo, как она подскажет.
+Перед этим проверить, что скрипт start в корневом package.json действительно запускает сервер.
+
+
+Шаг 5. Nginx как reverse proxy
+------------------------------
+Создать файл /etc/nginx/sites-available/ichgram:
+
+    server {
+        listen 80;
+        server_name ваш-домен.ru;
+
+        location / {
+            proxy_pass http://127.0.0.1:5000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header Host $host;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+    }
+
+Строки Upgrade и Connection нужны для WebSocket (Socket.IO, сообщения).
+Порт 5000 должен совпадать с PORT в server/.env.
+
+Включить конфиг:
+    sudo ln -s /etc/nginx/sites-available/ichgram /etc/nginx/sites-enabled/
+    sudo rm -f /etc/nginx/sites-enabled/default
+    sudo nginx -t && sudo systemctl reload nginx
+
+
+Шаг 6. HTTPS
+------------
+    sudo apt install -y certbot python3-certbot-nginx
+    sudo certbot --nginx -d ваш-домен.ru
+
+После этого сайт доступен по https://ваш-домен.ru с любого устройства и из любой сети.
+
+
+Если нет домена
+---------------
+Можно открыть приложение по http://ELASTIC_IP, если Nginx слушает порт 80 без server_name.
+Без домена не будет HTTPS, и браузеры могут предупреждать о небезопасном соединении.
+
+
+Альтернативы
+------------
+- Client на S3 + CloudFront, server на Elastic Beanstalk, App Runner или ECS Fargate.
+  Сложнее, но более "облачно". При нескольких инстансах сервера Socket.IO потребует
+  sticky sessions или Redis adapter.
+- Все на Lightsail (упрощенный сервис AWS). Настройка похожа на EC2, но шагов меньше.
+
+
+Что проверить после деплоя
+--------------------------
+- Доступность сайта с мобильного интернета (не из своей сети).
+- Регистрация, вход, загрузка фото, лайки, сообщения через Socket.IO.
+- Сброс пароля: нужны рабочие SMTP-данные и правильный APP_URL.
+- Лимит 512 МБ у бесплатного кластера Atlas: Base64-фото занимают много места,
+  при большом объеме понадобится платный тариф.

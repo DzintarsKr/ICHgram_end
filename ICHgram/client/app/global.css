@@ -1,0 +1,64 @@
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/600.css";
+@import "@fontsource/stix-two-math/400.css";
+
+:root {
+  --sidebar-width: 0px;
+  --bottom-bar-height: 64px;
+  --accent: #0095f6;
+  --accent-hover: #1877f2;
+  --border: #dbdbdb;
+  --muted: #737373;
+  --danger: #ed4956;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --sidebar-width: 244px;
+    --bottom-bar-height: 0px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #171717;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(0 0 0 / 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(0 0 0 / 0.35);
+}

@@ -1,0 +1,103 @@
+.page {
+  max-width: 935px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  margin-bottom: 44px;
+  padding: 0 16px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  flex: 1;
+}
+
+.topRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.username {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 1rem;
+}
+
+.fullName {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.bio {
+  margin: 0;
+  font-size: 0.875rem;
+  white-space: pre-line;
+}
+
+.secondaryButton,
+.primaryButton {
+  display: inline-block;
+  padding: 5px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #efefef;
+  color: #262626;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.secondaryButton:hover {
+  background: #dbdbdb;
+}
+
+.primaryButton {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+}
+
+.primaryButton:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.primaryButton:disabled,
+.secondaryButton:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+@media (max-width: 639px) {
+  .header {
+    gap: 16px;
+    padding: 0;
+  }
+
+  .stats {
+    gap: 4px 12px;
+    font-size: 0.8125rem;
+  }
+}

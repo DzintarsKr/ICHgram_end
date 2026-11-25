@@ -1,0 +1,51 @@
+.avatar {
+  flex-shrink: 0;
+  border-radius: 9999px;
+  box-shadow: none;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #efefef;
+  color: #262626;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.feed {
+  width: 27.56px;
+  height: 27.56px;
+  box-shadow: none;
+  font-size: 0.75rem;
+}
+
+.sm {
+  width: 32px;
+  height: 32px;
+  font-size: 0.75rem;
+}
+
+.md {
+  width: 40px;
+  height: 40px;
+  font-size: 0.875rem;
+}
+
+.lg {
+  width: 96px;
+  height: 96px;
+  font-size: 1.75rem;
+}
+
+@media (min-width: 640px) {
+  .lg {
+    width: 150px;
+    height: 150px;
+  }
+}

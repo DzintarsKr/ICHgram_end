@@ -1,0 +1,40 @@
+{
+  "name": "ichgram",
+  "displayName": "ICHgram",
+  "private": true,
+  "description": "Instagram-like photo sharing app with a React client and an Express + MongoDB API.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"node --watch ICHgram/server/server.js\" \"vite --config ICHgram/client/vite.config.js\"",
+    "build": "vite build --config ICHgram/client/vite.config.js",
+    "start": "node ICHgram/server/server.js",
+    "typecheck": "vite build --config ICHgram/client/vite.config.js"
+  },
+  "dependencies": {
+    "@fontsource/pacifico": "^5.3.0",
+    "@fontsource/roboto": "^5.3.0",
+    "@fontsource/stix-two-math": "^5.3.0",
+    "@tabler/icons-react": "3.44.0",
+    "@tanstack/react-query": "^5.99.2",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.12.0",
+    "multer": "^2.5.0",
+    "nodemailer": "^7.0.13",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "8.1.0",
+    "socket.io": "^4.8.4",
+    "socket.io-client": "^4.8.4",
+    "vite": "8.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.3.0",
+    "concurrently": "^10.0.7"
+  },
+  "engines": {
+    "node": ">=22.22.0"
+  }
+}

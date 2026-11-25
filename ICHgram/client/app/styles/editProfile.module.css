@@ -1,0 +1,150 @@
+.page {
+  box-sizing: border-box;
+  padding: 32px 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 470px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.photoRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: #efefef;
+}
+
+.photoInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.photoName {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.photoSub {
+  overflow: hidden;
+  color: #737373;
+  font-size: 0.8125rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.photoButton {
+  position: relative;
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.photoButton:hover {
+  background: var(--accent-hover);
+}
+
+.fileInput {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.input,
+.textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.875rem;
+}
+
+.textareaWrap {
+  position: relative;
+}
+
+.textarea {
+  display: block;
+  padding-bottom: 22px;
+  resize: vertical;
+}
+
+.counter {
+  position: absolute;
+  right: 12px;
+  bottom: 6px;
+  color: #737373;
+  font-size: 0.75rem;
+  pointer-events: none;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 0;
+}
+
+.error {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--danger);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.submit {
+  min-width: 148px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.submit:disabled {
+  opacity: 0.5;
+  cursor: default;
+}

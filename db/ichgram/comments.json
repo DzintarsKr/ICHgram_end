@@ -1,0 +1,192 @@
+[
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd21774"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd21773"
+    },
+    "author": {
+      "$oid": "6b031064a11317ec76dc45d6"
+    },
+    "text": "Clean interior, love the stitching",
+    "createdAt": {
+      "$date": "2026-11-18T16:26:06.905Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-18T16:26:06.905Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd21775"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd21773"
+    },
+    "author": {
+      "$oid": "6b031063a11317ec76dc45d4"
+    },
+    "text": "That steering wheel is sharp",
+    "createdAt": {
+      "$date": "2026-11-18T16:52:06.905Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-18T16:52:06.905Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd21776"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd21773"
+    },
+    "author": {
+      "$oid": "6b030c16c7ff09ccee49c080"
+    },
+    "text": "The dashboard looks so modern",
+    "createdAt": {
+      "$date": "2026-11-18T16:27:06.905Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-18T16:27:06.905Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd21778"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd21777"
+    },
+    "author": {
+      "$oid": "6b031063a11317ec76dc45d3"
+    },
+    "text": "That view is unreal",
+    "createdAt": {
+      "$date": "2026-11-20T22:03:06.917Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-20T22:03:06.917Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd21779"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd21777"
+    },
+    "author": {
+      "$oid": "6b030bf9da78c1694f758381"
+    },
+    "text": "Wrap up warm, it looks cozy",
+    "createdAt": {
+      "$date": "2026-11-20T21:43:06.917Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-20T21:43:06.917Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd2177b"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd2177a"
+    },
+    "author": {
+      "$oid": "6b031064a11317ec76dc45d6"
+    },
+    "text": "Need a cappuccino right now",
+    "createdAt": {
+      "$date": "2026-11-20T08:59:06.921Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-20T08:59:06.921Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd2177c"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd2177a"
+    },
+    "author": {
+      "$oid": "6b031063a11317ec76dc45d4"
+    },
+    "text": "Love the shelves behind the bar",
+    "createdAt": {
+      "$date": "2026-11-20T08:44:06.921Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-20T08:44:06.921Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd2177d"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd2177a"
+    },
+    "author": {
+      "$oid": "6b030c16c7ff09ccee49c080"
+    },
+    "text": "The wooden counter is gorgeous",
+    "createdAt": {
+      "$date": "2026-11-20T08:18:06.921Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-20T08:18:06.921Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd2177f"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd2177e"
+    },
+    "author": {
+      "$oid": "6b030bf9da78c1694f758381"
+    },
+    "text": "Is that a full motherboard swap?",
+    "createdAt": {
+      "$date": "2026-11-18T16:48:06.926Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-18T16:48:06.926Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6b0330eecceb28291dd21780"
+    },
+    "post": {
+      "$oid": "6b0330eecceb28291dd2177e"
+    },
+    "author": {
+      "$oid": "6b031063a11317ec76dc45d3"
+    },
+    "text": "Impressive repair work",
+    "createdAt": {
+      "$date": "2026-11-18T16:51:06.926Z"
+    },
+    "updatedAt": {
+      "$date": "2026-11-18T16:51:06.926Z"
+    },
+    "__v": 0
+  }
+]

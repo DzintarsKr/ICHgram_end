@@ -1,0 +1,187 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: var(--bottom-bar-height);
+  left: var(--sidebar-width);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 760px;
+  max-height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 8px 32px rgb(0 0 0 / 0.3);
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 48px;
+  border-bottom: 1px solid #efefef;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.submit {
+  position: absolute;
+  right: 16px;
+  padding: 4px 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.submit:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.close {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  padding: 4px;
+  border: none;
+  background: none;
+  color: #262626;
+  cursor: pointer;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.picker {
+  position: relative;
+  display: flex;
+  flex: 1.2;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+  background: #fafafa;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.picker:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: #262626;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.placeholderText {
+  font-size: 1.25rem;
+}
+
+.selectButton {
+  padding: 6px 16px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  max-height: 560px;
+  object-fit: contain;
+  background: #000;
+}
+
+.fileInput {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.side {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px;
+  border-left: 1px solid #efefef;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.textarea {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  font: inherit;
+  font-size: 0.875rem;
+  resize: none;
+  outline: none;
+}
+
+.error {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--danger);
+}
+
+@media (max-width: 767px) {
+  .overlay {
+    left: 0;
+  }
+
+  .body {
+    flex-direction: column;
+  }
+
+  .picker {
+    min-height: 280px;
+  }
+
+  .side {
+    border-left: none;
+    border-top: 1px solid #efefef;
+  }
+}

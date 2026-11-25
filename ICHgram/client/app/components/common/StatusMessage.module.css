@@ -1,0 +1,14 @@
+.message {
+  margin: 0;
+  padding: 32px 16px;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.muted {
+  color: #737373;
+}
+
+.error {
+  color: var(--danger);
+}

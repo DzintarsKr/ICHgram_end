@@ -1,0 +1,184 @@
+.card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 404px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #dbdbdb;
+  background: #fff;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-size: 12.06px;
+  line-height: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10.33px;
+  box-sizing: border-box;
+  height: 41.34px;
+  padding: 1.72px 0 0 3.45px;
+}
+
+.avatarLink {
+  display: block;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.avatarWrap {
+  position: relative;
+  display: block;
+  width: 27.56px;
+  height: 27.56px;
+}
+
+.avatarRing {
+  position: absolute;
+  top: -4.31px;
+  left: -4.31px;
+  width: 36.18px;
+  height: 36.18px;
+  pointer-events: none;
+}
+
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.username {
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+}
+
+.dot,
+.time {
+  color: #737373;
+}
+
+.dot {
+  margin: 0 2px;
+}
+
+.media {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 403.82 / 505.59;
+  overflow: hidden;
+  border: 0.86px solid #dbdbdb;
+  border-radius: 3.45px;
+  background: #000;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.details {
+  padding-top: 3.45px;
+}
+
+.actions {
+  display: flex;
+  align-items: flex-start;
+  gap: 13.78px;
+  box-sizing: border-box;
+  height: 34.45px;
+  padding-top: 6.89px;
+}
+
+.iconButton {
+  display: inline-flex;
+  padding: 0;
+  border: none;
+  background: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.iconButton:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.iconButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.icon {
+  display: block;
+  width: 20.67px;
+  height: 20.67px;
+}
+
+.liked {
+  color: var(--danger);
+}
+
+.likes {
+  margin: 3.87px 0 0;
+  font-weight: 600;
+}
+
+.caption {
+  margin: 5.97px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.captionUsername {
+  margin-right: 6px;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+
+.captionText {
+  font-family: "STIX Two Math", serif;
+  font-size: 12.06px;
+}
+
+.commentsLink {
+  display: block;
+  margin-top: 4px;
+  color: #737373;
+  text-decoration: none;
+}
+
+.commentsLink:hover {
+  color: #000;
+}
+
+.commentForm {
+  margin-top: 6px;
+}
+
+.commentInput {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #000;
+  font: inherit;
+  outline: none;
+}
+
+.commentInput::placeholder {
+  color: #737373;
+  opacity: 1;
+}
